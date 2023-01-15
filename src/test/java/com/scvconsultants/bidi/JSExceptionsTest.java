@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class JSExceptions {
+class JSExceptionsTest {
     @Test
     void jsExceptionsTest() throws ExecutionException, InterruptedException, TimeoutException {
         WebDriver driver = new ChromeDriver();

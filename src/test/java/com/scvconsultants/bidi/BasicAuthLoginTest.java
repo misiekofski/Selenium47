@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static org.assertj.core.api.Assertions.*;
 
 
-public class BasicAuthLogin {
+class BasicAuthLoginTest {
     @Test
     void basicAuthTest() {
         WebDriver driver = new ChromeDriver();

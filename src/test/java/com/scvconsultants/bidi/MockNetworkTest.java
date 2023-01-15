@@ -13,14 +13,14 @@ import org.openqa.selenium.remote.http.Route;
 
 import static org.openqa.selenium.remote.http.Contents.utf8String;
 
-public class MockNetwork {
+class MockNetworkTest {
     @Test
     void mockNetworkTest() {
         WebDriver driver = new ChromeDriver();
         DevTools devTools = ((HasDevTools) driver).getDevTools();
         devTools.createSession();
 
-        try (NetworkInterceptor interceptor = new NetworkInterceptor(
+        try (NetworkInterceptor ignored = new NetworkInterceptor(
                 driver,
                 Route.matching(req -> req.getUri().contains("youtube"))
                         .to(() -> req -> new HttpResponse()

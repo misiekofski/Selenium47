@@ -7,7 +7,15 @@ import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
 import org.openqa.selenium.devtools.v108.log.Log;
 
-public class ConsoleLogEvents {
+import static org.assertj.core.api.Assertions.assertThat;
+
+class ConsoleLogEventsTest {
+    private String lastLogEntry;
+
+    public void setLastLogEntry(String level) {
+        lastLogEntry = level;
+    }
+
     @Test
     void consoleLogTest() {
         WebDriver driver = new ChromeDriver();
@@ -17,10 +25,12 @@ public class ConsoleLogEvents {
 
         devTools.addListener(Log.entryAdded(),
                 logEntry -> {
+                    setLastLogEntry(logEntry.getText());
                     System.out.println("log: "+logEntry.getText());
                     System.out.println("level: "+logEntry.getLevel());
                 });
 
         driver.get("https://github.com/");
+        assertThat(lastLogEntry).contains("A preload for");
     }
 }
