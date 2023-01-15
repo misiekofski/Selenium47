@@ -7,10 +7,6 @@ import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
 import org.openqa.selenium.devtools.v108.log.Log;
 
-import java.util.concurrent.CountDownLatch;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
 public class ConsoleLogEvents {
     @Test
     void consoleLogTest() {

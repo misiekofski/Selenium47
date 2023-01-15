@@ -1,6 +1,5 @@
 package com.scvconsultants.bidi;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 
@@ -8,7 +7,6 @@ import java.net.URI;
 import java.util.function.Predicate;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.assertj.core.api.Assertions.*;
 
