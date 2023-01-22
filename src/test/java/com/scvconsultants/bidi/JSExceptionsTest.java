@@ -14,6 +14,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 class JSExceptionsTest {
     @Test
     void jsExceptionsTest() throws ExecutionException, InterruptedException, TimeoutException {
@@ -36,6 +38,6 @@ class JSExceptionsTest {
         element.click();
 
         futureJsExc.get(5, TimeUnit.SECONDS);
-        Assertions.assertEquals(1, jsExceptionsList.size());
+        assertThat(jsExceptionsList).hasSize(1);
     }
 }
