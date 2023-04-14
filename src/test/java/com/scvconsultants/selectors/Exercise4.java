@@ -3,6 +3,7 @@ package com.scvconsultants.selectors;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Exercise4 {
     @Test
@@ -14,7 +15,9 @@ public class Exercise4 {
         // Steps
 
         // initialize browser (Chrome here)
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        WebDriver driver = new ChromeDriver(options);
         // Login to site
         driver.get(url);
         // validate that clicking on last name sorts table properly
