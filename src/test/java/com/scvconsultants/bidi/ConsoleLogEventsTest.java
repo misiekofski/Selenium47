@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v108.log.Log;
+import org.openqa.selenium.devtools.v111.log.Log;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
