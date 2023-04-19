@@ -15,7 +15,7 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PerformanceLogger {
+public class PerformanceLogger extends BaseTest {
     private List<Metric> metricList;
     WebDriver driver;
 

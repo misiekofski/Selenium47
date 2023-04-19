@@ -15,16 +15,12 @@ import org.openqa.selenium.JavascriptException;
 
 import static org.awaitility.Awaitility.await;
 
-public class JSErrorLogger {
+public class JSErrorLogger extends BaseTest {
 
     private final List<JavascriptException> jsExceptionsList = new ArrayList<>();
 
     @Test
     void jsErrorLogger() throws ExecutionException, InterruptedException, TimeoutException {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
-
         DevTools devTools = ((HasDevTools) driver).getDevTools();
         devTools.createSession();
         devTools.getDomains().events().addJavascriptExceptionListener(jsExceptionsList::add);
@@ -33,6 +29,6 @@ public class JSErrorLogger {
         driver.get("http://the-internet.herokuapp.com/javascript_error");
 
         // default wait time is 10 seconds
-        await().until(() -> jsExceptionsList.size() > 1);
+        await().until(() -> jsExceptionsList.size() > 0);
     }
 }

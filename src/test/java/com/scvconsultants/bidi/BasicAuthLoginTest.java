@@ -15,15 +15,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import static org.assertj.core.api.Assertions.*;
 
 
-class BasicAuthLoginTest {
+class BasicAuthLoginTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify basic authorization test")
     @Test
     void basicAuthTest() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
-
         var url = "https://authenticationtest.com/HTTPAuth/";
         var username = "user";
         var password = "pass";

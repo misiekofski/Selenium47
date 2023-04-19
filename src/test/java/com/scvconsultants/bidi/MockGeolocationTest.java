@@ -14,12 +14,9 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 
-class MockGeolocationTest {
+class MockGeolocationTest extends BaseTest {
     @Test
     void mockGeolocation() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
         DevTools devTools = ((HasDevTools) driver).getDevTools();
         devTools.createSession();
 

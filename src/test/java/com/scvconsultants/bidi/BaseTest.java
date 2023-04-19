@@ -10,11 +10,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class BaseTest {
     protected ChromeDriver driver;
 
-    @BeforeAll
-    static void setupDriver() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
+    @BeforeEach
+    void setupDriver() {
+        driver = new ChromeDriver();
     }
 
     @AfterEach

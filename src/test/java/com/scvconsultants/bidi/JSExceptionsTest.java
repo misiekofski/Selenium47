@@ -1,5 +1,6 @@
 package com.scvconsultants.bidi;
 
+import io.qameta.allure.internal.shadowed.jackson.databind.ser.Serializers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
@@ -17,12 +18,9 @@ import java.util.concurrent.TimeoutException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class JSExceptionsTest {
+class JSExceptionsTest extends BaseTest {
     @Test
     void jsExceptionsTest() throws ExecutionException, InterruptedException, TimeoutException {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
         DevTools devTools = ((HasDevTools) driver).getDevTools();
         devTools.createSession();
 

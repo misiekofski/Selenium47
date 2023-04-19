@@ -14,12 +14,9 @@ import org.openqa.selenium.remote.http.Route;
 
 import static org.openqa.selenium.remote.http.Contents.utf8String;
 
-class MockNetworkTest {
+class MockNetworkTest extends BaseTest {
     @Test
     void mockNetworkTest() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
         DevTools devTools = ((HasDevTools) driver).getDevTools();
         devTools.createSession();
 

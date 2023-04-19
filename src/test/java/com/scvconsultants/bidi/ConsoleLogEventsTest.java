@@ -1,5 +1,6 @@
 package com.scvconsultants.bidi;
 
+import io.qameta.allure.internal.shadowed.jackson.databind.ser.Serializers;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,7 +11,7 @@ import org.openqa.selenium.devtools.v111.log.Log;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class ConsoleLogEventsTest {
+class ConsoleLogEventsTest extends BaseTest {
     private String lastLogEntry;
 
     public void setLastLogEntry(String level) {
@@ -19,9 +20,7 @@ class ConsoleLogEventsTest {
 
     @Test
     void consoleLogTest() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
+
         DevTools devTools = ((HasDevTools) driver).getDevTools();
         devTools.createSession();
         devTools.send(Log.enable());
